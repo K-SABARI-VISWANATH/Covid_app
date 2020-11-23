@@ -1,0 +1,20 @@
+<div class="jumbotron bg-white">
+    <h1 class="display-4">Covid Status</h1>
+    <img src="assets/images/1.jpg" style="height: 35%;width: 35%; float: right; margin-top: -5%;">
+    <br>
+    <p class="lead">Choose the country to know their current status</p>
+    <br>
+    <select (change)="getCountry($event.target.value)">
+      <option *ngFor = "let country of countries" value={{country.Slug}}>
+        {{country.Country}}
+      </option>
+    </select>
+    <button (click)="getData()" class="btn btn-dark" style="left: 20px;">Get data</button>
+    <hr>
+    <br>
+    <p style="font-size:large;">Confirmed cases: {{confirmed}}</p>
+    <br><br>
+    <p style="font-size:large;">Recovered cases: {{recovered}}</p>
+    <br><br>
+    <p style="font-size:large;">Deaths: {{deaths}}</p>
+  </div>
